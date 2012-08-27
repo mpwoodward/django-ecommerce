@@ -1,4 +1,7 @@
 # Django settings for ecommerce project.
+import os
+# replace hack at the end is to accommodate windows
+CURRENT_PATH = os.path.abspath(os.path.dirname(__file__).decode('utf-8')).replace('\\', '/')
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -93,7 +96,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'djangodblog.middleware.DBLogMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -103,21 +105,18 @@ ROOT_URLCONF = 'ecommerce.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
-TEMPLATE_DIRS = ('/home/mwoodward/djangoprojects/ecommerce/templates',)
+TEMPLATE_DIRS = (os.path.join(CURRENT_PATH, 'templates'),)
 
 INSTALLED_APPS = (
-    #'django.contrib.auth',
-    #'django.contrib.contenttypes',
-    #'django.contrib.sessions',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
     #'django.contrib.sites',
-    #'django.contrib.messages',
+    'django.contrib.messages',
     #'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
-    'ecomstore',
-    'djangodblog',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
+    'catalog',
 )
 
 # A sample logging configuration. The only tangible logging
