@@ -118,6 +118,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'catalog',
     'utils',
+    'cart',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -161,6 +162,8 @@ LOGGING = {
         },
     }
 }
+
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 90
 
 SITE_NAME = 'Modern Musician'
 META_KEYWORDS = 'Music, instruments, music accessories, musician supplies'

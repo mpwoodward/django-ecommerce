@@ -139,3 +139,9 @@ div.product_image{
     float:left;
     padding: 0 10px 10px 0;
 }
+
+/* style for Django error messages */
+ul.errorlist{
+    background-color:red;
+    color:white;
+}

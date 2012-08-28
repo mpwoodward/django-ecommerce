@@ -9,7 +9,7 @@
     SKU: {{ p.sku }}<br/>
     In categor{{ categories.count|pluralize:'y,ies' }}:
     {% for c in categories %}
-        <a href=="{{ c.get_absolute_url }}">{{ c.name }}</a>
+        <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
         {% if not forloop.last %}, {% endif %}
     {% endfor %}
     <br /><br />
@@ -20,7 +20,13 @@
         Price: $ {{ p.price }}
     {% endif %}
     <br /><br />
-    [ add to cart button ]
+    <form method="post" action="." class="cart">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <br />
+        <input type="submit" value="Add To Cart" name="submit" alt="Add To Cart" />
+    </form>
+    <div class="cb"></div>
     <br /><br />
     <div class="cb"><br /><br /></div>
     <h3>Product Description</h3>
