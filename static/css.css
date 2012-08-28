@@ -79,7 +79,7 @@ div.cart_box a{
     width:900px;
     height:auto;
     background-color:#98ac5e;
-    text-align:middle;
+    text-align:center;
 }
 
 #navigation ul{
@@ -110,8 +110,32 @@ div.cart_box a{
     text-align:center;
 }
 
+a{
+    color:#98ac5e;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
 a.skip_link{
     position:absolute;
     left:-1000px;
     top:-1000px;
+}
+
+/* category page styles */
+div.product_thumbnail{
+    text-align:center;
+    float:left;
+    width:150px;
+    height:200px;
+}
+
+/* product page styles */
+div.product_image{
+    float:left;
+    padding: 0 10px 10px 0;
 }

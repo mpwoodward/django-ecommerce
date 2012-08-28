@@ -12,9 +12,10 @@ urlpatterns = patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-    # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    (r'^catalog/$', 'preview.views.home'),
-    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+    url(r'^', include('catalog.urls')),
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root':'/home/mwoodward/djangoprojects/ecommerce/static'}),
 )
+
+handler404 = 'views.file_not_found_404'
